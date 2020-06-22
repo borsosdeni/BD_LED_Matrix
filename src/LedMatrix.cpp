@@ -97,10 +97,33 @@ void LedMatrix::clear() {
 }
 
 void LedMatrix::commit() {
-    for (byte col = 0; col < myNumberOfDevices * 8; col++) {
+   /* for (byte col = 0; col < myNumberOfDevices * 8; col++) {
         sendByte(col / 8, col % 8 + 1, cols[col]);
-    }
+    }*/
+	byte Jav_cols[32];
+	for (byte digit = 0; digit < 4; digit++){
+		for (byte sor = 0; sor < 8; sor++){
+			for (byte oszlop = 0; oszlop < 8; oszlop++){
+					bitWrite(Jav_cols[7-sor +(digit*8)], oszlop, bitRead(cols[oszlop+(digit*8)], sor)); }}}
+	for (byte digit = 0; digit < 4; digit++){
+		for (byte oszlop = 0; oszlop < 8; oszlop++){
+			sendByte(digit, oszlop, (Jav_cols[oszlop+24-digit*8]));
+}}
 }
+
+/*
+void LedMatrix::commit() { //shift the data not on the column but on the row
+byte Jav_cols[32];
+for (byte digit = 0; digit < 4; digit++){
+for (byte sor = 0; sor < 8; sor++){
+for (byte oszlop = 0; oszlop < 8; oszlop++){
+bitWrite(Jav_cols[7-sor +(digit*8)], oszlop, bitRead(cols[oszlop+(digit*8)], sor)); }}}
+for (byte digit = 0; digit < 4; digit++){
+for (byte oszlop = 0; oszlop < 8; oszlop++){
+sendByte(digit, oszlop, (Jav_cols[oszlop+24-digit*8]));
+}}}
+
+*/
 
 void LedMatrix::setText(String text) {
     myText = text;
