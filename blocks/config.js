@@ -86,7 +86,7 @@ module.exports = [
                         </value>
                     </block>`
             },
-			//LedMatrix_8x8_setColumn
+
 			{
                 xml:
                     `<block type="LedMatrix_8x8_setColumn">
