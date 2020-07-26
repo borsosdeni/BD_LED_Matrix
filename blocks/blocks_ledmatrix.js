@@ -119,11 +119,10 @@ Blockly.Blocks["LedMatrix_8x8_set_intemsiti"] = {
 
 Blockly.Blocks['LedMatrix_8x8_set_text'] = {
   init: function () {
-    this.appendDummyInput()
+   this.appendValueInput("arrl")
 	  .appendField(new Blockly.FieldVariable("LedMatrix_8x8", null, ["Plugin.LedMatrix_8x8"], ["Plugin.LedMatrix_8x8"]), "instance")
-      .appendField("LED Matrix Text: " + '"')
-      .appendField(new Blockly.FieldTextInput(""), "arr1")
-	  .appendField('"')
+      .appendField("LED Matrix Text: ")
+    // .appendField(new Blockly.FieldTextInput(""), "arr1")
    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -135,11 +134,11 @@ Blockly.Blocks['LedMatrix_8x8_set_text'] = {
 
 Blockly.Blocks['LedMatrix_8x8_setNextText'] = {
   init: function () {
-    this.appendDummyInput()
+   this.appendValueInput("arrl")
 	  .appendField(new Blockly.FieldVariable("LedMatrix_8x8", null, ["Plugin.LedMatrix_8x8"], ["Plugin.LedMatrix_8x8"]), "instance")
-      .appendField("LED Matrix set next Text: " + '"')
-      .appendField(new Blockly.FieldTextInput(""), "arr1")
-	  .appendField('"')
+      .appendField("LED Matrix set next Text: ")
+     // .appendField(new Blockly.FieldTextInput(""), "arr1")
+	 // .appendField('"')
    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

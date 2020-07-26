@@ -99,12 +99,13 @@ ${variable_instance}.setIntensity(${value_bright});
 
 Blockly.JavaScript['LedMatrix_8x8_set_text'] = function (block) {
   
-  var arr1 = block.getFieldValue('arr1');
+ 
+  var arrl = valueToCode(block, "arrl", ORDER_ATOMIC);
     var variable_instance = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('instance'), Blockly.Variables.NAME_TYPE);
 
  var code =
     `
-${variable_instance}.setText("${arr1}");
+${variable_instance}.setText(${arrl});
 `;
   return code;
 };
@@ -112,12 +113,12 @@ ${variable_instance}.setText("${arr1}");
 //LedMatrix_8x8_setNextText
 Blockly.JavaScript['LedMatrix_8x8_setNextText'] = function (block) {
   
-  var arr1 = block.getFieldValue('arr1');
+ var arrl = valueToCode(block, "arrl", ORDER_ATOMIC);
     var variable_instance = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('instance'), Blockly.Variables.NAME_TYPE);
 
  var code =
     `
-${variable_instance}.setNextText("${arr1}");
+${variable_instance}.setNextText(${arrl});
 `;
   return code;
 };
